@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
+import Date from './CurrentDate';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import './App.css';
+
 
 const theme = createMuiTheme({
     palette: {
+        background: {
+        default: "#303030"
+        },
         primary: {
             main: '#ff4400',
         },
         secondary: {
-            main:'#0066ff'
+            light:'#0066ff',
+            main: '#0044ff',
+            contrastText: '#ffcc00'
         } 
     }
 });
@@ -64,10 +73,14 @@ render() {
     return (
       <div>
         <MuiThemeProvider theme={theme}>
+            <CssBaseline />
           <div>
           <AppBar
              title="Travelex" //Will vary based on the addition of other stats
            />
+           <h2>Associate Name</h2>
+           <Date format="MMMM D, YYYY" />
+           <br/>
            <TextField
              hintText="Enter your EID"
              floatingLabelText="EID"
@@ -77,6 +90,15 @@ render() {
              <TextField
                hintText="Enter a Policy Number"
                floatingLabelText="Policy Number"
+               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
+               />
+             <br/>
+             <TextField
+               hintText="Notes"
+               multiLine={true}
+               rows={4}
+               size="small"
+               floatingLabelText="Notes"
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
