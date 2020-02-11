@@ -1,7 +1,20 @@
+import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import { createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#ff4400',
+        },
+        secondary: {
+            main:'#0066ff'
+        } 
+    }
+});
 
 class UserInput extends Component {
 
@@ -9,48 +22,51 @@ constructor(props){
   super(props);
   this.state={
   eid:'',
-  policyNum:''
+  policyNum:'',
+  stat: ''
   }
  }
 
- handleClick(event){
-    var apiBaseUrl = "http://localhost:4000/api/";
-    var self = this;
-    var payload={
-    "eid":this.state.eid,
-    "policyNum":this.state.policyNum
-    }
-    axios.post(apiBaseUrl+'login', payload)
-    .then(function (response) {
-    console.log(response);
+ //******COMMENTED OUT FOR REFACTORING******
+//  handleClick(event){
+//     var apiBaseUrl = "http://localhost:4000/api/";
+//     var self = this;
+//     var payload={
+//     "eid":this.state.eid,
+//     "policyNum":this.state.policyNum
+//     }
+//     axios.post(apiBaseUrl+'login', payload)
+//     .then(function (response) {
+//     console.log(response);
 
-    if(response.data.code == 200){
-    console.log("Display new stats");
-    var uploadScreen=[];
-    uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-    self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
-    }
-    else if(response.data.code == 204){
-    console.log("Username password do not match");
-    alert("username password do not match")
-    }
-    else{
-    console.log("Username does not exists");
-    alert("Username does not exist");
-    }
-    })
-    .catch(function (error) {
-    console.log(error);
-    });
-    }
+//     if(response.data.code == 200){
+//     console.log("Display updated stats");
+//     var uploadScreen=[];
+//     uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
+//     self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
+//     }
+//     else if(response.data.code == 204){
+//     console.log("Not a valid policy number");
+//     alert("Not a valid policy number")
+//     }
+//     else{
+//     console.log("EID does not exist");
+//     alert("EID does not exist");
+//     }
+//     })
+//     .catch(function (error) {
+//     console.log(error);
+//     });
+//     }
+
 
 render() {
     return (
       <div>
-        <MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>
           <div>
           <AppBar
-             title="Login"
+             title="Travelex" //Will vary based on the addition of other stats
            />
            <TextField
              hintText="Enter your EID"
