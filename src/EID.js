@@ -25,7 +25,7 @@ const theme = createMuiTheme({
     }
 });
 
-class UserInput extends Component {
+class EID extends Component {
 
 constructor(props){
   super(props);
@@ -75,34 +75,12 @@ render() {
         <MuiThemeProvider theme={theme}>
             <CssBaseline />
           <div>
-           <h2>Associate Name</h2>
-             <TextField
-               hintText="Enter a Policy Number"
-               floatingLabelText="Policy Number 1 "
-               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
-               />
-             <br/>
-             <TextField
-               hintText="Enter a Policy Number"
-               floatingLabelText="Policy Number 2"
-               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
-               />
-             <br/>
-             <TextField
-               hintText="Enter a Policy Number"
-               floatingLabelText="Policy Number 3"
-               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
-               />
-             <br/>
-             <TextField
-               hintText="Notes"
-               multiLine={true}
-               rows={4}
-               size="small"
-               floatingLabelText="Notes"
-               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
-               />
-             <br/>
+           <TextField
+             hintText="Enter your EID"
+             floatingLabelText="EID"
+             onChange = {(event,newValue) => this.setState({eid:newValue})}
+             />
+           <br/>
              <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
@@ -115,4 +93,4 @@ const style = {
  margin: 15,
 };
 
-export default UserInput;
+export default EID;
