@@ -89,7 +89,19 @@ render() {
            <br/>
              <TextField
                hintText="Enter a Policy Number"
-               floatingLabelText="Policy Number"
+               floatingLabelText="Policy Number 1 "
+               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
+               />
+             <br/>
+             <TextField
+               hintText="Enter a Policy Number"
+               floatingLabelText="Policy Number 2"
+               onChange = {(event,newValue) => this.setState({policyNum:newValue})}
+               />
+             <br/>
+             <TextField
+               hintText="Enter a Policy Number"
+               floatingLabelText="Policy Number 3"
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
