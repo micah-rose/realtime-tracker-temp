@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AppBar from 'material-ui/AppBar';
-import UserInput from './UserInput';
 import Date from './CurrentDate';
+import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import EID from './EID';
+import UserInput from './UserInput';
 import { createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import './App.css';
@@ -26,7 +27,27 @@ const theme = createMuiTheme({
   }
 });
 
-function App() {
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state={
+      isSubmit: false,
+      userInputCollapsed: false,
+      eidCollapsed: false
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(){
+    this.setState=({
+      userInputCollapsed: !this.state.userInputCollapsed,
+      eidCollapsed: !this.state.eidCollapsed,
+      isSubmit: true
+    })
+  }
+
+render() {
   return (
     <div className="App">
       <header className="App-header">
@@ -39,11 +60,23 @@ function App() {
           <br/>
            <Date format="MMMM D, YYYY" />
            <br/>
+           {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
+           <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.handleClick}/>
          </div>
          </MuiThemeProvider>
-         <EID />
+         <EID handleClick={this.handleClick} 
+               userInputCollapsed={this.state.userInputCollapsed}
+               profileCollapsed={this.state.profileCollapsed}/>
+        
+              
     </div>
   );
 }
+
+}
+
+const style = {
+  margin: 15,
+ };
 
 export default App;

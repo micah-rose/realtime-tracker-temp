@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Date from './CurrentDate';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -26,15 +24,6 @@ const theme = createMuiTheme({
 });
 
 class EID extends Component {
-
-constructor(props){
-  super(props);
-  this.state={
-  eid:'',
-  policyNum:'',
-  stat: ''
-  }
- }
 
  //******COMMENTED OUT FOR REFACTORING******
 //  handleClick(event){
@@ -81,7 +70,7 @@ render() {
              onChange = {(event,newValue) => this.setState({eid:newValue})}
              />
            <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.handleClick}/>
          </div>
          </MuiThemeProvider>
       </div>
