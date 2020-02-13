@@ -56,27 +56,20 @@ render() {
       <MuiThemeProvider theme={theme}>
             <CssBaseline />
           <div>
-          <AppBar title='RealTime Stat Tracker'/>
+          <AppBar title='Real Time Stat Tracker'/>
           <br/>
            <Date format="MMMM D, YYYY" />
            <br/>
            {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
-           <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.handleClick}/>
-         </div>
-         </MuiThemeProvider>
          <EID handleClick={this.handleClick} 
                userInputCollapsed={this.state.userInputCollapsed}
-               profileCollapsed={this.state.profileCollapsed}/>
-        
-              
+               profileCollapsed={this.state.eidCollapsed}/>
+         </div>
+         </MuiThemeProvider>             
     </div>
   );
 }
 
 }
-
-const style = {
-  margin: 15,
- };
 
 export default App;
