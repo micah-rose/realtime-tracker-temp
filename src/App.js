@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AppBar from 'material-ui/AppBar';
-import Date from './CurrentDate';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppHeader from './AppHeader';
 import EID from './EID';
 import UserInput from './UserInput';
 import { createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from "@material-ui/core/CssBaseline";
 import './App.css';
 
 const theme = createMuiTheme({
@@ -52,15 +49,7 @@ render() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />      
       </header>
-      <MuiThemeProvider theme={theme}>
-            <CssBaseline />
-          <div>
-          <AppBar title='Real Time Stat Tracker'/>
-          <br/>
-           <Date  />
-           <br/>
-         </div>
-         </MuiThemeProvider>   
+      <AppHeader />
          {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
          <EID handleClick={this.handleClick} 
                userInputCollapsed={this.state.userInputCollapsed}

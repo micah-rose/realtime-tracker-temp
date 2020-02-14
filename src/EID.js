@@ -3,7 +3,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import { createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from "@material-ui/core/CssBaseline";
 import './App.css';
 
 
@@ -79,7 +78,6 @@ render() {
     return (
       <div>
         <MuiThemeProvider theme={theme}>
-            <CssBaseline />
           <div>
            <TextField
              hintText="Enter your EID"
