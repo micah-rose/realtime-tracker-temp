@@ -5,11 +5,11 @@ class CurrentDate extends Component {
 
   render() {
     return (
-      <div class="date">
-        <Moment />
+      <div>
+        <Moment format="MMMM D, YYYY" />
       </div>
     );
   }
 }
 
-export default Moment;
+export default CurrentDate;

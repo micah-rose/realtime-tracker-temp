@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import AppBar from 'material-ui/AppBar';
 import Date from './CurrentDate';
-import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import EID from './EID';
 import UserInput from './UserInput';
@@ -58,14 +57,14 @@ render() {
           <div>
           <AppBar title='Real Time Stat Tracker'/>
           <br/>
-           <Date format="MMMM D, YYYY" />
+           <Date  />
            <br/>
-           {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
+         </div>
+         </MuiThemeProvider>   
+         {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
          <EID handleClick={this.handleClick} 
                userInputCollapsed={this.state.userInputCollapsed}
-               profileCollapsed={this.state.eidCollapsed}/>
-         </div>
-         </MuiThemeProvider>             
+               profileCollapsed={this.state.eidCollapsed}/>          
     </div>
   );
 }
