@@ -4,24 +4,7 @@ import './App.css';
 import AppHeader from './AppHeader';
 import EID from './EID';
 import UserInput from './UserInput';
-import { createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
-
-const theme = createMuiTheme({
-  palette: {
-      background: {
-      default: "#303030"
-      },
-      primary: {
-          main: '#ff4400',
-      },
-      secondary: {
-          light:'#0066ff',
-          main: '#0044ff',
-          contrastText: '#ffcc00'
-      } 
-  }
-});
 
 class App extends Component {
 
@@ -29,8 +12,8 @@ class App extends Component {
     super();
     this.state={
       isSubmit: false,
-      userInputCollapsed: false,
-      eidCollapsed: false
+      //userInputCollapsed: false,
+      //eidCollapsed: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -50,7 +33,7 @@ render() {
         <img src={logo} className="App-logo" alt="logo" />      
       </header>
       <AppHeader />
-         {(!this.state.isSubmit) ? <EID id="eid"/> : <UserInput id="userInput" />}
+         {(!this.state.isSubmit) ? <EID /> : <UserInput  />}
          <EID handleClick={this.handleClick} 
                userInputCollapsed={this.state.userInputCollapsed}
                profileCollapsed={this.state.eidCollapsed}/>          
