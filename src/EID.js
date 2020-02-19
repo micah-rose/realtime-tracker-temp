@@ -24,24 +24,6 @@ const theme = createMuiTheme({
 
 class EID extends Component {
 
-constructor() {
-  super();
-  this.state={
-    isSubmit: false,
-    userInputCollapsed: false,
-    eidCollapsed: false
-  }
-  this.handleClick = this.handleClick.bind(this);
-}
-
-handleClick(){
-  this.setState=({
-    userInputCollapsed: !this.state.userInputCollapsed,
-    eidCollapsed: !this.state.eidCollapsed,
-    isSubmit: true
-  })
-}
-
 render() {
     return (
       <div>

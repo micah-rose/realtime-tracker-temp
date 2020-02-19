@@ -12,16 +12,12 @@ class App extends Component {
     super();
     this.state={
       isSubmit: false,
-      //userInputCollapsed: false,
-      //eidCollapsed: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(){
     this.setState=({
-      userInputCollapsed: !this.state.userInputCollapsed,
-      eidCollapsed: !this.state.eidCollapsed,
       isSubmit: true
     })
   }
@@ -33,10 +29,7 @@ render() {
         <img src={logo} className="App-logo" alt="logo" />      
       </header>
       <AppHeader />
-         {(!this.state.isSubmit) ? <EID /> : <UserInput  />}
-         <EID handleClick={this.handleClick} 
-               userInputCollapsed={this.state.userInputCollapsed}
-               profileCollapsed={this.state.eidCollapsed}/>          
+         {(!this.state.isSubmit) ? <EID /> : <UserInput  />}       
     </div>
   );
 }
