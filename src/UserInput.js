@@ -33,39 +33,6 @@ constructor(props){
   }
  }
 
- //******COMMENTED OUT FOR REFACTORING******
-//  handleClick(event){
-//     var apiBaseUrl = "http://localhost:4000/api/";
-//     var self = this;
-//     var payload={
-//     "eid":this.state.eid,
-//     "policyNum":this.state.policyNum
-//     }
-//     axios.post(apiBaseUrl+'login', payload)
-//     .then(function (response) {
-//     console.log(response);
-
-//     if(response.data.code == 200){
-//     console.log("Display updated stats");
-//     var uploadScreen=[];
-//     uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-//     self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
-//     }
-//     else if(response.data.code == 204){
-//     console.log("Not a valid policy number");
-//     alert("Not a valid policy number")
-//     }
-//     else{
-//     console.log("EID does not exist");
-//     alert("EID does not exist");
-//     }
-//     })
-//     .catch(function (error) {
-//     console.log(error);
-//     });
-//     }
-
-
 render() {
     return (
       <div>
