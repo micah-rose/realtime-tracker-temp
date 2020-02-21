@@ -29,7 +29,7 @@ render() {
         <img src={logo} className="App-logo" alt="logo" />      
       </header>
       <AppHeader />
-         {(!this.state.isSubmit) ? <EID /> : <UserInput  />}       
+         {(!this.state.isSubmit) ? <EID action={this.handleClick}/> : <UserInput  />}       
     </div>
   );
 }

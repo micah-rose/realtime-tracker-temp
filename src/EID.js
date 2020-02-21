@@ -35,7 +35,7 @@ render() {
              onChange = {(event,newValue) => this.setState({eid:newValue})}
              />
            <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.handleClick}/>
+             <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.action}/>
          </div>
          </MuiThemeProvider>
       </div>
