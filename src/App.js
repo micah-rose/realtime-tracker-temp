@@ -20,6 +20,7 @@ class App extends Component {
     this.setState=({
       isSubmit: true
     })
+    console.log('Button clicked');
   }
 
 render() {
