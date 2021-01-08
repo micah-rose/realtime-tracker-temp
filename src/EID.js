@@ -1,41 +1,23 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import { createMuiTheme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 import './App.css';
-
-
-const theme = createMuiTheme({
-    palette: {
-        background: {
-        default: "#303030"
-        },
-        primary: {
-            main: '#ff4400',
-        },
-        secondary: {
-            light:'#0066ff',
-            main: '#0044ff',
-            contrastText: '#ffcc00'
-        } 
-    }
-});
 
 class EID extends Component {
 
 render() {
     return (
       <div>
-        <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider>
           <div>
-           <TextField
-             hintText="Enter your EID"
-             floatingLabelText="EID"
-             onChange = {(event,newValue) => this.setState({eid:newValue})}
-             />
+           <Input
+            style={inputStyle}
+            placeholder="Enter your EID"
+            onChange = {(event,newValue) => this.setState({eid:newValue})}
+           />
            <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={this.props.action}/>
+             <Button style={btnStyle} onClick={this.props.action}>Submit</Button>
          </div>
          </MuiThemeProvider>
       </div>
@@ -43,8 +25,14 @@ render() {
   }
 }
 
-const style = {
+const inputStyle = {
+  margin: 15
+}
+
+const btnStyle = {
  margin: 15,
+ backgroundColor: 'teal',
+ color: 'white'
 };
 
 export default EID;
