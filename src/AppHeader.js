@@ -27,8 +27,7 @@ class AppHeader extends Component {
 render() {
     return (
         <div>
-        <MuiThemeProvider theme={theme}>
-           
+        <MuiThemeProvider theme={theme}>         
             <div>
                 <AppBar title='Real Time Stat Tracker'/>
                 <br/>
