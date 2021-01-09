@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 import { createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 
@@ -39,25 +39,25 @@ render() {
         <MuiThemeProvider theme={theme}>
           <div>
            <h2>Associate Name</h2>
-             <TextField
+             <Input
                hintText="Enter a Policy Number"
                floatingLabelText="Policy Number 1 "
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
-             <TextField
+             <Input
                hintText="Enter a Policy Number"
                floatingLabelText="Policy Number 2"
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
-             <TextField
+             <Input
                hintText="Enter a Policy Number"
                floatingLabelText="Policy Number 3"
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
-             <TextField
+             <Input
                hintText="Notes"
                multiLine={true}
                rows={4}
@@ -66,7 +66,7 @@ render() {
                onChange = {(event,newValue) => this.setState({policyNum:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <Button label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}>Submit</Button>
          </div>
          </MuiThemeProvider>
       </div>

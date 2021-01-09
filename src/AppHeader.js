@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import Date from './CurrentDate';
 import AppBar from 'material-ui/AppBar';
 
-class AppHeader extends Component {
 
-render() {
+const AppHeader = () => {
+
+
     return (
         <div>
         <MuiThemeProvider >         
@@ -19,6 +20,6 @@ render() {
         </div>
     );
 }
-}
+
 
 export default AppHeader;
