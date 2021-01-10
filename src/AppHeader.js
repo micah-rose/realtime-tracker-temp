@@ -6,8 +6,6 @@ import AppBar from 'material-ui/AppBar';
 
 
 const AppHeader = () => {
-
-
     return (
         <div>
         <MuiThemeProvider >         

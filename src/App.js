@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import AppHeader from './AppHeader';
 import EID from './EID';
-// import UserInput from './UserInput';
+import CreateUser from './CreateUser';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
 
 const App = () => {
@@ -26,8 +27,13 @@ const App = () => {
     <div className="App">
       <AppHeader />
       <br/>
-      <EID />
-         {/* {(!this.state.isSubmit) ? <EID action={this.handleClick}/> : <UserInput  />}        */}
+      <Router>
+        <Switch>
+          <Route exact component={EID} path="/" />
+          <Route exact component={CreateUser} path="/create-user" />
+        </Switch>
+      </Router>
+
     </div>
   );
 }
