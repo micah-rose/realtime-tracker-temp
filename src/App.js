@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import AppHeader from './AppHeader';
-// import EID from './EID';
+import EID from './EID';
 // import UserInput from './UserInput';
 import './App.css';
 
@@ -25,6 +25,8 @@ const App = () => {
   return (
     <div className="App">
       <AppHeader />
+      <br/>
+      <EID />
          {/* {(!this.state.isSubmit) ? <EID action={this.handleClick}/> : <UserInput  />}        */}
     </div>
   );

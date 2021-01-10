@@ -1,33 +1,20 @@
-import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import React from 'react';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
 import './App.css';
 
-class EID extends Component {
-
-render() {
+const EID = () => {
     return (
       <div>
-        <MuiThemeProvider>
           <div>
-           <Input
-            style={inputStyle}
-            placeholder="Enter your EID"
-            onChange = {(event,newValue) => this.setState({eid:newValue})}
-           />
+           <input type="text" placeholder="Username"/>
            <br/>
-             <Button style={btnStyle} onClick={this.props.action}>Submit</Button>
+             <Button style={btnStyle}>Submit</Button>
+             <br/>
+             <a href="https://www.google.com/" style={{fontSize: '15px'}}>Don't have a username? Create one!</a>
          </div>
-         </MuiThemeProvider>
       </div>
     );
   }
-}
-
-const inputStyle = {
-  margin: 15
-}
 
 const btnStyle = {
  margin: 15,
